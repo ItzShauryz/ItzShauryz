@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Profile</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .border {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .terminal {
+            width: 80%;
+            margin: auto;
+            padding-top: 20px;
+        }
+        .typing {
+            display: inline-block;
+            border-right: 2px solid #00ff00;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 1.5em;
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .typing::after {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: #00ff00;
+            animation: blink 0.8s infinite;
+        }
+        .section {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #00ff00;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        .section h2 {
+            color: #00ff00;
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <p class="typing" id="hack-text"></p>
+    </div>
+    
+    <div class="section" id="introduction">
+        <h2>Introduction</h2>
+        <p>Hello, My name is Shauryz. I am a cyber enthusiast and ethical hacker. I specialize in penetration testing, cryptography, and cybersecurity research.</p>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Contact</h2>
+        <p>Email: itzshauryz@gmail.com</p>
+        <p>GitHub: github.com/Itzshauryz</p>
+        <p>Twitter: ~~~~~~~~~~~~~</p>
+    </div>
+    
+    <div class="border footer">101010101010101010101010100110101010101010100101010110100101010101010101010101010101010</div>
+    
+    <script>
+        const text = "/show profile \"Itzshauryz\"";
+        let i = 0;
+        function typeEffect() {
+            if (i < text.length) {
+                document.getElementById("hack-text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+        window.onload = typeEffect;
+    </script>
+</body>
+</html>
